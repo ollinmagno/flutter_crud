@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Users {
+class User {
   final String id;
   final String name;
   final String email;
   final String avatarUrl;
 
-  const Users ({
+  const User ({
     this.id,
     @required this.name,
     @required this.email,

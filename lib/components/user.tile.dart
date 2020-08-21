@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_crud/models/users.dart';
 
 class UserTile extends StatelessWidget {
-  final Users user;
+  final User user;
   
   const UserTile(this.user);
   @override
@@ -13,6 +13,24 @@ class UserTile extends StatelessWidget {
 
     return ListTile(
       leading: avatar,
+      title: Text(user.name),
+      subtitle: Text(user.email),
+      trailing: Container(
+        width: 100,
+        child: Row(
+          children: <Widget>[    
+          IconButton(
+            icon: Icon(Icons.edit),
+            color: Colors.amber,
+            onPressed: (){},
+          ),
+          IconButton(
+            icon: Icon(Icons.delete),
+            color: Colors.red,
+            onPressed: (){},
+          ),
+        ],),
+      ),
     );
   }
 }
