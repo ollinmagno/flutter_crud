@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'components/user.tile.dart';
-import 'models/users.dart';
+import 'models/user.dart';
 import 'provider/users.dart';
-
 
 class UserList extends StatelessWidget {
   @override
@@ -16,8 +15,8 @@ class UserList extends StatelessWidget {
         actions: <Widget>[
            IconButton(
             icon: Icon(Icons.add),
-            onPressed: () => users.put(User(name: 'Ollin',
-            email: 'ollin@uncisal.com', avatarUrl: '')),
+            onPressed: () => users.put(User(name: 'Ollinn',
+            email: 'email@teste.comm', avatarUrl: 'https://cdn0.iconfinder.com/data/icons/avatar-78/128/7-512.png')),
           ),
         ],
       ),

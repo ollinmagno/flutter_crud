@@ -3,24 +3,25 @@ import 'package:provider/provider.dart';
 import 'provider/users.dart';
 import 'user_list.dart';
 
-
-void main() => runApp(MyApp());
+void main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => Users(),
+          ),
+        ],
+        child: MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => Users(),
-        ),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter CRUD',
-        theme: ThemeData(primaryColor: Colors.amber),
-        home: UserList(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter CRUD',
+      theme: ThemeData(primaryColor: Colors.amber),
+      home: UserList(),
     );
   }
 }

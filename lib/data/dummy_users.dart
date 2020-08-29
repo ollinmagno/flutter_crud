@@ -1,19 +1,19 @@
-import 'package:flutter_crud/models/users.dart';
+import 'package:flutter_crud/models/user.dart';
 
 const DUMMY_USERS = {
-  '1': User(
+  '1': const User(
     id: '1',
     name: 'Maria',
     email: 'maria@aluno.com.br',
     avatarUrl: 'https://cdn0.iconfinder.com/data/icons/avatar-78/128/7-512.png'
   ),
-  '2': User(
+  '2': const User(
     id: '2',
     name: 'rafael',
     email: 'rafael@alunos.com.br',
     avatarUrl: 'https://download.seaicons.com/icons/webalys/kameleon.pics/512/Man-6-icon.png'
   ),
-  '3': User(
+  '3': const User(
     id: '3',
     name: 'Fernanda',
     email: 'fernanda@alunos.com.br',
