@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 import 'components/user.tile.dart';
-import 'models/user.dart';
-import 'provider/users.dart';
+import 'models/user_model.dart';
+import 'provider/users_dao.dart';
 
 class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Users users = Provider.of(context);
+    final UsersDAO usersDAO = Provider.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -15,8 +16,7 @@ class UserList extends StatelessWidget {
         actions: <Widget>[
            IconButton(
             icon: Icon(Icons.add),
-            onPressed: () => users.put(User(name: 'Ollinn',
-            email: 'email@teste.comm', avatarUrl: 'https://cdn0.iconfinder.com/data/icons/avatar-78/128/7-512.png')),
+            onPressed: () => Navigator.of(context).pushNamed(AppRoutes.USER_FORM),
           ),
         ],
       ),
@@ -24,8 +24,8 @@ class UserList extends StatelessWidget {
         padding: const EdgeInsets.only(top: 16),
         color: Colors.white,
         child: ListView.builder(
-          itemCount: users.count,
-          itemBuilder: (context, index) => UserTile(users.byIndex(index)),
+          itemCount: usersDAO.count,
+          itemBuilder: (context, index) => UserTile(usersDAO.byIndex(index)),
         ),
       ),
     );
