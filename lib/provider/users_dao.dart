@@ -38,13 +38,16 @@ class UsersDAO with ChangeNotifier {
       return;
     }
     final String id = Random().nextDouble().toString();
-    _items.putIfAbsent(
+    if (user != null && user.id != null && user.id.trim().isNotEmpty) {
+      _items.putIfAbsent(
         id,
         () => User(
             id: id,
             name: user.name,
             email: user.email,
-            avatarUrl: user.avatarUrl));
+            avatarUrl: user.avatarUrl),
+      );
+    }
 
     notifyListeners();
   }

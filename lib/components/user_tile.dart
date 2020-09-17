@@ -5,9 +5,8 @@ import 'package:flutter_crud/routes/app_routes.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
-  final UsersDAO usersDAO;
-
-  const UserTile(this.user, {this.usersDAO});
+  const UserTile(this.user);
+  
   @override
   Widget build(BuildContext context) {
     final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
