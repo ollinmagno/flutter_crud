@@ -38,7 +38,9 @@ class UsersDAO with ChangeNotifier {
       return;
     }
     final String id = Random().nextDouble().toString();
-    if (user != null && user.id != null && user.id.trim().isNotEmpty) {
+  
+    if (user != null) {
+      print("salvando usuário");
       _items.putIfAbsent(
         id,
         () => User(
@@ -46,6 +48,7 @@ class UsersDAO with ChangeNotifier {
             name: user.name,
             email: user.email,
             avatarUrl: user.avatarUrl),
+            
       );
     }
 

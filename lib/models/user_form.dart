@@ -25,7 +25,7 @@ class UserForm extends StatelessWidget {
                 _formKey.currentState.save();
                 Provider.of<UsersDAO>(context, listen: false).put(
                   User(
-                    id  : _formData['id'],
+                    id: _formData['id'],
                     name: _formData['name'],
                     email: _formData['email'],
                     avatarUrl: _formData['avatarUrl']
@@ -53,7 +53,7 @@ class UserForm extends StatelessWidget {
                     FocusScope.of(context).requestFocus(_nextFocus);
                   }
                 },
-                onSaved: (value) => _formData['nome'] = value,
+                onSaved: (value) => _formData['name'] = value,
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return 'Nome inválido';
